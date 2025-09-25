@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<style>
+    *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: linear-gradient(to bottom right, #f5f8f9, #191a1a);
+            background-image:
+            repeating-linear-gradient(
+                to right, transparent 0 100px,
+                #94d7eb 100px 101px
+            ),
+            repeating-linear-gradient(
+                to bottom, transparent 0 100px,
+                #ade7f5 100px 101px
+            );
+        }
+        
+        body::before{
+            position: absolute;
+            width: min(1400px, 90vw);
+            top: 10%;
+            left: 50%;
+            height: 90%;
+            transform: translateX(-50%);
+            content: '';
+            background-image: url('Futurustic_Design.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            pointer-events: none;
+        }
+</style>
+<body>
+    <nav>
+        <div class="logo-text">
+            <div class="logo-main">
+                <span class="logo-din">DIN<span class="logo-tech">T</span></span><span class="logo-e">E</span><span class="logo-tech">CH</span>
+                <div class="logo-drops">
+                    <div class="drop"></div>
+                    <div class="drop"></div>
+                </div>
+            </div>
+            <div class="logo-tagline">DINATLHA <span class="logo-din">TECHNOLOGIES</span></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="target.html">Target Market</a>
+            <a href="contact.html">Contact</a>
+            <a href="shop.html">Shop</a>
+        </div>
+        <div class="mobile-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1" data-service="cctv">
+                <img src="cctv.jpg" alt="CCTV Security System">
+                <div class="service-tooltip">CCTV Installation & Security Solutions</div>
+            </div>
+            <div class="item" style="--position: 2" data-service="repairs">
+                <img src="ict_repairs.png" alt="ICT Repairs & Maintenance">
+                <div class="service-tooltip">ICT Repairs & Maintenance - Complete Device Support</div>
+            </div>
+            <div class="item" style="--position: 3" data-service="networking">
+                <img src="networking.png" alt="Network Setup">
+                <div class="service-tooltip">Networking - LAN, WAN, Wi-Fi Setup & Support</div>
+            </div>
+            <div class="item" style="--position: 4" data-service="hardware">
+                <img src="hardware.png" alt="Hardware Troubleshooting">
+                <div class="service-tooltip">Hardware Troubleshooting - Expert Diagnostics</div>
+            </div>
+            <div class="item" style="--position: 5" data-service="software">
+                <img src="software.png" alt="Software Support">
+                <div class="service-tooltip">Software Support - Installation & Configuration</div>
+            </div>
+            <div class="item" style="--position: 6" data-service="security">
+                <img src="security.png" alt="Virus Removal & Data Recovery">
+                <div class="service-tooltip">Virus Removal & Data Recovery Services</div>
+            </div>
+            <div class="item" style="--position: 7" data-service="mobile">
+                <img src="mobile.png" alt="Mobile Device Repairs">
+                <div class="service-tooltip">Mobile Device Repairs - Phones & Tablets</div>
+            </div>
+            <div class="item" style="--position: 8" data-service="printer">
+                <img src="printer.png" alt="Printer Support">
+                <div class="service-tooltip">Printer Support & Maintenance Services</div>
+            </div>
+            <div class="item" style="--position: 9" data-service="monitoring">
+                <img src="monitoring.png" alt="Remote Monitoring">
+                <div class="service-tooltip">Remote Monitoring - Mobile & Desktop Access</div>
+            </div>
+            <div class="item" style="--position: 10" data-service="maintenance">
+                <img src="Preventive_Maintenance.png" alt="Preventive Maintenance">
+                <div class="service-tooltip">Preventive Maintenance & ICT Support</div>
+            </div>
+            <div class="item" style="--position: 11" data-service="solar">
+                <img src="Solar_Panels.png" alt="Solar Energy Solutions">
+                <div class="service-tooltip">Solar Energy Solutions - Sustainable Power Systems</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Information Panel -->
+    <div class="service-info" id="serviceInfo">
+        <button class="close-info" onclick="closeServiceInfo()">&times;</button>
+        <div id="serviceContent">
+            <!-- Content will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="Business Logo - Din-Tech (1).jpg" alt="logo">
+            </div>
+            <p class="footer-tagline">Professional ICT & Security Solutions</p>
+            </div>
+
+            <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="target.html">Target Market</a>
+            <a href="contact.html">Contact</a>
+            <a href="shop.html">Shop</a>
+            </div>
+
+            <div class="footer-contact">
+            <p> <a href="mailto:info@dintech.co.za"><i class="fas fa-envelope"></i></a></p>
+            <p> <a href="tel:+27123456789"><i class="fas fa-phone"></i></a></p>
+            </div>
+
+            <div class="footer-social">
+                <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Dinatlha Technologies. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Service information data
+        const serviceData = {
+            cctv: {
+                title: "CCTV Security Systems",
+                description: "Professional surveillance solutions providing 24/7 security monitoring and protection for your premises.",
+                features: [
+                    "High-definition cameras with night vision",
+                    "Remote monitoring capabilities",
+                    "Motion detection and alerts",
+                    "Cloud storage and backup",
+                    "Professional installation and setup"
+                ]
+            },
+            solar: {
+                title: "Solar Energy Solutions",
+                description: "Sustainable and cost-effective solar power systems designed to reduce your energy costs and carbon footprint.",
+                features: [
+                    "Custom solar panel installation",
+                    "Energy storage solutions",
+                    "Grid-tie and off-grid systems",
+                    "Energy monitoring and optimization",
+                    "Maintenance and support services"
+                ]
+            },
+            repairs: {
+                title: "ICT Repairs & Maintenance",
+                description: "Comprehensive ICT repair and maintenance services ensuring optimal performance and minimal downtime.",
+                features: [
+                    "Hardware repairs and upgrades",
+                    "Software troubleshooting and support",
+                    "Network diagnostics and optimization",
+                ]
+            },
+            hardware: {
+                title: "Hardware Troubleshooting",
+                description: "Expert hardware troubleshooting services to diagnose and resolve issues with your devices.",
+                features: [
+                    "Component testing and replacement",
+                    "System performance optimization",
+                    "Data recovery solutions",
+                ]
+            },
+            networking: {
+                title: "Network Setup",
+                description: "Professional network setup and configuration services for secure and reliable connectivity.",
+                features: [
+                    "Wireless network installation",
+                    "LAN and WAN setup",
+                    "Network security configurations",
+                    "VPN setup and integration",
+                    "Network monitoring and management"
+                ]
+            },
+            software: {
+                title: "Software Support",
+                description: "Comprehensive software support services to ensure your applications run smoothly and efficiently.",
+                features: [
+                    "Application installation and configuration",
+                    "Software updates and patch management",
+                    "User training and documentation",
+                ]
+            },
+            security: {
+                title: "Virus Removal & Data Recovery",
+                description: "Expert virus removal and data recovery services to protect your business from cyber threats.",
+                features: [
+                    "Malware and virus removal",
+                    "Data recovery from damaged drives",
+                    "System restoration and backup solutions",
+                ]
+            },
+            mobile: {
+                title: "Mobile Device Repairs",
+                description: "Expert repair services for mobile devices, ensuring minimal downtime and quick turnaround.",
+                features: [
+                    "Screen replacement",
+                    "Battery replacement",
+                    "Water damage repair",
+                ]
+            },
+            printer: {
+                title: "Printer Support",
+                description: "Comprehensive printer support services to keep your business running smoothly.",
+                features: [
+                    "Printer installation and configuration",
+                    "Driver updates and troubleshooting",
+                    "Network printing solutions",
+                    "Print management and optimization",
+                ]
+            },
+            monitoring: {
+                title: "Remote Monitoring",
+                description: "24/7 remote monitoring services for your IT infrastructure, ensuring optimal performance and security.",
+                features: [
+                    "Real-time system monitoring",
+                    "Proactive issue detection",
+                    "Performance reporting and analytics",
+                ]
+            },
+            maintenance: {
+                title: "Preventive Maintenance",
+                description: "Regular preventive maintenance services to ensure the longevity and reliability of your IT systems.",
+                features: [
+                    "Scheduled system check-ups",
+                    "Hardware cleaning and optimization",
+                    "Software updates and patches",
+                ]
+            }   
+        };
+
+
+
+        // Add click event listeners to service items
+        document.querySelectorAll('.item[data-service]').forEach(item => {
+            item.addEventListener('click', function() {
+                const service = this.dataset.service;
+                showServiceInfo(service);
+            });
+        });
+
+
+
+        function showServiceInfo(service) {
+            const info = serviceData[service];
+            if (!info) return;
+
+            const content = document.getElementById('serviceContent');
+            content.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <ul>
+                    ${info.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+            `;
+
+            document.getElementById('serviceInfo').classList.add('active');
+        }
+
+        function closeServiceInfo() {
+            document.getElementById('serviceInfo').classList.remove('active');
+        }
+
+        // Close service info when clicking outside
+        document.addEventListener('click', function(e) {
+            const serviceInfo = document.getElementById('serviceInfo');
+            if (!serviceInfo.contains(e.target) && !e.target.closest('.item[data-service]')) {
+                closeServiceInfo();
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

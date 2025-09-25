@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="SHOP.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-element" style="width: 60px; height: 60px; background: linear-gradient(45deg, #3b82f6, #6366f1); border-radius: 50%;"></div>
+    <div class="floating-element" style="width: 40px; height: 40px; background: linear-gradient(45deg, #22a1ba, #3452dc); border-radius: 50%;"></div>
+    <div class="floating-element" style="width: 80px; height: 80px; background: linear-gradient(45deg, #6366f1, #22a1ba); border-radius: 50%;"></div>
+
+    <nav>
+        <div class="logo-text">
+            <div class="logo-main">
+                <span class="logo-din">DIN<span class="logo-tech">T</span></span><span class="logo-e">E</span><span class="logo-tech">CH</span>
+                <div class="logo-drops">
+                    <div class="drop"></div>
+                    <div class="drop"></div>
+                </div>
+            </div>
+            <div class="logo-tagline">DINATLHA <span class="logo-din">TECHNOLOGIES</span></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="target.html">Target Market</a>
+            <a href="contact.html">Contact</a>
+            <a href="shop.html">Shop</a>
+            <div class="cart-icon" onclick="openCart()">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+        </div>
+        <!-- Cart Icon Button -->
+        <div class="mobile-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="shop">
+        <div class="shop-header">
+            <h1>Tech Solutions Store</h1>
+            <p class="shop-subtitle">Professional ICT & Security Solutions for homes and businesses. From computer repairs to complete surveillance systems.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+            <div class="filter-tab active" data-filter="all">All Products</div>
+            <div class="filter-tab" data-filter="ict">ICT Services</div>
+            <div class="filter-tab" data-filter="security">Security Systems</div>
+            <div class="filter-tab" data-filter="packages">Packages</div>
+        </div>
+
+<div class="products-grid" id="productsGrid">
+            <!-- ICT Services -->
+            <div class="product-card" data-category="ict">
+                <div class="product-icon">💻</div>
+                <h3 class="product-title">Computer Repairs & Maintenance</h3>
+                <p class="product-description">Professional diagnosis, repair, and maintenance services for desktops, laptops, and servers to keep your systems running optimally.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Performance Boost</span>
+                    <span class="benefit-tag">Reduced Downtime</span>
+                    <span class="benefit-tag">Expert Diagnosis</span>
+                </div>
+                <div class="product-price">From R500</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Computer Repairs & Maintenance', 500)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('computer-repair-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="ict">
+                <div class="product-icon">💾</div>
+                <h3 class="product-title">Data Recovery & Backup</h3>
+                <p class="product-description">Recover lost or corrupted data and implement secure backup systems to protect your valuable information.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Data Protection</span>
+                    <span class="benefit-tag">Business Continuity</span>
+                    <span class="benefit-tag">Secure Storage</span>
+                </div>
+                <div class="product-price">From R800</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Data Recovery & Backup', 800)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('data-recovery-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="ict">
+                <div class="product-icon">📶</div>
+                <h3 class="product-title">Networking & Wi-Fi Setup</h3>
+                <p class="product-description">Professional Wi-Fi setup, network points installation, and cabling for reliable and secure connectivity.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Reliable Connection</span>
+                    <span class="benefit-tag">Secure Network</span>
+                    <span class="benefit-tag">Professional Installation</span>
+                </div>
+                <div class="product-price">From R1,200</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Networking & Wi-Fi Setup', 1200)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('networking-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="ict">
+                <div class="product-icon">🖥️</div>
+                <h3 class="product-title">IT Infrastructure Supply</h3>
+                <p class="product-description">Complete supply and setup of PC Labs, servers, switches, routers, UPS systems, and other IT hardware.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">One-Stop Solution</span>
+                    <span class="benefit-tag">Enterprise Grade</span>
+                    <span class="benefit-tag">Professional Setup</span>
+                </div>
+                <div class="product-price">From R5,000</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('IT Infrastructure Supply', 5000)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('infrastructure-info')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Security Systems -->
+            <div class="product-card" data-category="security">
+                <div class="product-icon">📹</div>
+                <h3 class="product-title">CCTV Surveillance</h3>
+                <p class="product-description">Indoor & outdoor HD/IP cameras with DVR/NVR systems and standalone solar Wi-Fi cameras for comprehensive monitoring.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">24/7 Monitoring</span>
+                    <span class="benefit-tag">Crime Deterrence</span>
+                    <span class="benefit-tag">HD Quality</span>
+                </div>
+                <div class="product-price">From R6,500</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('CCTV Surveillance', 6500)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('cctv-info')">View Options</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="security">
+                <div class="product-icon">🚨</div>
+                <h3 class="product-title">Alarm Systems</h3>
+                <p class="product-description">Advanced alarm systems with motion sensors, sirens, and panic buttons linked to central alarm panels.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Instant Alerts</span>
+                    <span class="benefit-tag">Burglary Prevention</span>
+                    <span class="benefit-tag">Remote Monitoring</span>
+                </div>
+                <div class="product-price">From R4,500</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Alarm Systems', 4500)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('alarm-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="security">
+                <div class="product-icon">🔒</div>
+                <h3 class="product-title">Access Control</h3>
+                <p class="product-description">Biometric scanners, card/fob readers, and turnstiles for controlled access and attendance tracking.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Entry Control</span>
+                    <span class="benefit-tag">Attendance Tracking</span>
+                    <span class="benefit-tag">Biometric Security</span>
+                </div>
+                <div class="product-price">From R7,500</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Access Control', 7500)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('access-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="security">
+                <div class="product-icon">🔔</div>
+                <h3 class="product-title">Intercom & Video Door Phones</h3>
+                <p class="product-description">Audio/video entry systems for homes and offices providing visitor verification and secure access control.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Visitor Verification</span>
+                    <span class="benefit-tag">Secure Access</span>
+                    <span class="benefit-tag">Two-Way Communication</span>
+                </div>
+                <div class="product-price">From R3,500</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Intercom & Video Door Phones', 3500)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('intercom-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="security">
+                <div class="product-icon">⚡</div>
+                <h3 class="product-title">Electric Fencing & Gates</h3>
+                <p class="product-description">Perimeter electric fencing and automated gate systems providing a strong first line of defense.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Perimeter Security</span>
+                    <span class="benefit-tag">Automated Access</span>
+                    <span class="benefit-tag">Strong Deterrent</span>
+                </div>
+                <div class="product-price">From R8,500</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Electric Fencing & Gates', 8500)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('fencing-info')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Maintenance & Support -->
+            <div class="product-card" data-category="ict">
+                <div class="product-icon">🔧</div>
+                <h3 class="product-title">Preventative Maintenance</h3>
+                <p class="product-description">Scheduled system checks and maintenance for ICT and security equipment to extend lifespan and prevent failures.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Extended Lifespan</span>
+                    <span class="benefit-tag">Prevent Failures</span>
+                    <span class="benefit-tag">Regular Checkups</span>
+                </div>
+                <div class="product-price">From R300/month</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Preventative Maintenance', 300)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('maintenance-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="ict">
+                <div class="product-icon">🚑</div>
+                <h3 class="product-title">Emergency Call-Outs</h3>
+                <p class="product-description">Fast-response support for urgent ICT and security system failures with minimal downtime guarantee.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Fast Response</span>
+                    <span class="benefit-tag">Minimal Downtime</span>
+                    <span class="benefit-tag">24/7 Available</span>
+                </div>
+                <div class="product-price">From R950</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Emergency Call-Outs', 950)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('emergency-info')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Package Deals -->
+            <div class="product-card" data-category="packages">
+                <div class="product-icon">📦</div>
+                <h3 class="product-title">CCTV Starter Package</h3>
+                <p class="product-description">4 HD cameras with DVR system and professional installation. Perfect for small homes or offices.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Complete Package</span>
+                    <span class="benefit-tag">Installation Included</span>
+                    <span class="benefit-tag">HD Quality</span>
+                </div>
+                <div class="product-price">R6,500</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('CCTV Starter Package', 6500)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('cctv-starter-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="packages">
+                <div class="product-icon">📹</div>
+                <h3 class="product-title">CCTV Premium Package</h3>
+                <p class="product-description">8 IP cameras with NVR system, remote access, and mobile app monitoring for medium-sized properties.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Remote Access</span>
+                    <span class="benefit-tag">Mobile App</span>
+                    <span class="benefit-tag">IP Cameras</span>
+                </div>
+                <div class="product-price">R12,000</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('CCTV Premium Package', 12000)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('cctv-premium-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="packages">
+                <div class="product-icon">🏢</div>
+                <h3 class="product-title">CCTV Enterprise Package</h3>
+                <p class="product-description">16 IP cameras with advanced NVR, cloud backup, analytics, and 24/7 monitoring for large businesses.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Cloud Backup</span>
+                    <span class="benefit-tag">Analytics</span>
+                    <span class="benefit-tag">24/7 Monitoring</span>
+                </div>
+                <div class="product-price">R22,000</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('CCTV Enterprise Package', 22000)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('cctv-enterprise-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="packages">
+                <div class="product-icon">🚨</div>
+                <h3 class="product-title">Complete Alarm Package</h3>
+                <p class="product-description">Wireless alarm system with motion sensors, door contacts, siren, and panic buttons with professional monitoring.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Wireless System</span>
+                    <span class="benefit-tag">Professional Monitoring</span>
+                    <span class="benefit-tag">Complete Setup</span>
+                </div>
+                <div class="product-price">R4,500</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Complete Alarm Package', 4500)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('alarm-package-info')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="packages">
+                <div class="product-icon">🔐</div>
+                <h3 class="product-title">Access Control Package</h3>
+                <p class="product-description">Biometric fingerprint reader with access control software and attendance tracking system.</p>
+                <div class="product-benefits">
+                    <span class="benefit-tag">Biometric Security</span>
+                    <span class="benefit-tag">Attendance Tracking</span>
+                    <span class="benefit-tag">Software Included</span>
+                </div>
+                <div class="product-price">R7,500</div>
+                <div class="product-actions">
+                    <button class="btn-primary" onclick="addToCart('Access Control Package', 7500)">Add to Cart</button>
+                    <button class="btn-secondary" onclick="openModal('access-package-info')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal cart-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cartModal')">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <h3>Total: R<span id="cartTotal">0.00</span></h3>
+            </div>
+            <div style="margin-top: 2rem;">
+                <button class="btn-primary" onclick="proceedToCheckout()" style="width: 100%; margin-bottom: 1rem;">Proceed to Checkout</button>
+                <button class="btn-secondary" onclick="closeModal('cartModal')" style="width: 100%;">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('checkoutModal')">&times;</span>
+            <h2>Checkout</h2>
+            
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="customerName">Full Name *</label>
+                    <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerEmail">Email Address *</label>
+                    <input type="email" id="customerEmail" name="customerEmail" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number *</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" required placeholder="Enter your phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerAddress">Installation/Delivery Address *</label>
+                    <textarea id="customerAddress" name="customerAddress" required placeholder="Enter complete address" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Method *</label>
+                    <div class="payment-methods">
+                        <div class="payment-method active" data-method="card">
+                            <h4>💳</h4>
+                            <p>Credit/Debit Card</p>
+                        </div>
+                        <div class="payment-method" data-method="eft">
+                            <h4>🏦</h4>
+                            <p>Bank Transfer</p>
+                        </div>
+                        <div class="payment-method" data-method="cash">
+                            <h4>💵</h4>
+                            <p>Cash on Delivery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Payment Form -->
+                <div id="cardPaymentForm">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number *</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="expiryDate">Expiry Date *</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="cvv">CVV *</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bank Transfer Info -->
+                <div id="eftPaymentForm" style="display: none;">
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+                        <h4 style="color: #60a5fa; margin-bottom: 0.5rem;">Bank Transfer Details:</h4>
+                        <p><strong>Bank:</strong> FNB</p>
+                        <p><strong>Account Name:</strong> Dinatlha Technologies</p>
+                        <p><strong>Account Number:</strong> 1234567890</p>
+                        <p><strong>Branch Code:</strong> 250655</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Please use your order number as payment reference and email proof of payment to orders@dintech.co.za</p>
+                    </div>
+                </div>
+
+                <!-- Cash on Delivery Info -->
+                <div id="cashPaymentForm" style="display: none;">
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+                        <h4 style="color: #10b981; margin-bottom: 0.5rem;">Cash on Delivery:</h4>
+                        <p>Pay with cash when our technician arrives for installation or delivery.</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Additional R100 COD fee will be added to your order.</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="specialRequests">Special Requests (Optional)</label>
+                    <textarea id="specialRequests" name="specialRequests" placeholder="Any special installation requirements or requests" rows="3"></textarea>
+                </div>
+
+                <div class="cart-total" style="margin: 2rem 0;">
+                    <h3>Order Total: R<span id="checkoutTotal">0.00</span></h3>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">
+                    Complete Order
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('successModal')">&times;</span>
+            <div class="success-message">
+                <h2>🎉 Order Placed Successfully!</h2>
+                <p>Thank you for your order! Your order number is: <strong id="orderNumber"></strong></p>
+                <p>We will contact you within 24 hours to confirm installation details.</p>
+                <p>A confirmation email has been sent to your email address.</p>
+            </div>
+            <button class="btn-primary" onclick="closeModal('successModal')" style="width: 100%; margin-top: 1rem;">Continue Shopping</button>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="Business Logo - Din-Tech (1).jpg" alt="logo">
+            </div>
+            <p class="footer-tagline">Professional ICT & Security Solutions</p>
+            </div>
+
+            <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="target.html">Target Market</a>
+            <a href="contact.html">Contact</a>
+            <a href="shop.html">Shop</a>
+            </div>
+
+            <div class="footer-contact">
+            <p> <a href="mailto:info@dintech.co.za"><i class="fas fa-envelope"></i></a></p>
+            <p> <a href="tel:+27123456789"><i class="fas fa-phone"></i></a></p>
+            </div>
+
+            <div class="footer-social">
+                <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Dinatlha Technologies. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let cart = [];
+        let currentFilter = 'all';
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Update active tab
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter products
+                const filter = this.getAttribute('data-filter');
+                currentFilter = filter;
+                filterProducts(filter);
+            });
+        });
+
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                if (category === 'all' || product.getAttribute('data-category') === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // Cart functionality
+        function addToCart(productName, price) {
+            const existingItem = cart.find(item => item.name === productName);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: productName,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            
+            // Show success message
+            showNotification(`${productName} added to cart!`);
+        }
+
+        function removeFromCart(productName) {
+            cart = cart.filter(item => item.name !== productName);
+            updateCartDisplay();
+            updateCartCount();
+        }
+
+        function updateQuantity(productName, change) {
+            const item = cart.find(item => item.name === productName);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productName);
+                } else {
+                    updateCartDisplay();
+                    updateCartCount();
+                }
+            }
+        }
+
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.7); padding: 2rem;">Your cart is empty</p>';
+                cartTotal.textContent = '0.00';
+                return;
+            }
+            
+            let total = 0;
+            cartItems.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                return `
+                    <div class="cart-item">
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <p>R${item.price.toLocaleString()} each</p>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
+                                <span style="color: #fff; margin: 0 10px;">Qty: ${item.quantity}</span>
+                                <button class="quantity-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
+                                <button class="remove-btn" onclick="removeFromCart('${item.name}')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="cart-item-price">R${itemTotal.toLocaleString()}</div>
+                    </div>
+                `;
+            }).join('');
+            
+            cartTotal.textContent = total.toLocaleString();
+        }
+
+        function openCart() {
+            updateCartDisplay();
+            openModal('cartModal');
+        }
+
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                showNotification('Your cart is empty!');
+                return;
+            }
+            
+            closeModal('cartModal');
+            
+            // Update checkout total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('checkoutTotal').textContent = total.toLocaleString();
+            
+            openModal('checkoutModal');
+        }
+
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Payment method selection
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', function() {
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+                this.classList.add('active');
+                
+                const selectedMethod = this.getAttribute('data-method');
+                
+                // Show/hide payment forms
+                document.getElementById('cardPaymentForm').style.display = selectedMethod === 'card' ? 'block' : 'none';
+                document.getElementById('eftPaymentForm').style.display = selectedMethod === 'eft' ? 'block' : 'none';
+                document.getElementById('cashPaymentForm').style.display = selectedMethod === 'cash' ? 'block' : 'none';
+            });
+        });
+
+        // Form validation and submission
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const selectedPaymentMethod = document.querySelector('.payment-method.active').getAttribute('data-method');
+            
+            // Validate required fields
+            if (!validateForm(selectedPaymentMethod)) {
+                return;
+            }
+            
+            // Calculate final total (add COD fee if cash payment)
+            let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            if (selectedPaymentMethod === 'cash') {
+                total += 100; // COD fee
+            }
+            
+            // Generate order number
+            const orderNumber = 'DT' + Date.now().toString().slice(-6);
+            
+            // Simulate payment processing
+            processPayment(formData, selectedPaymentMethod, total, orderNumber);
+        });
+
+        function validateForm(paymentMethod) {
+            const requiredFields = ['customerName', 'customerEmail', 'customerPhone', 'customerAddress'];
+            
+            for (let field of requiredFields) {
+                const element = document.getElementById(field);
+                if (!element.value.trim()) {
+                    showNotification(`Please fill in ${element.labels[0].textContent}`);
+                    element.focus();
+                    return false;
+                }
+            }
+            
+            // Validate payment method specific fields
+            if (paymentMethod === 'card') {
+                const cardFields = ['cardNumber', 'expiryDate', 'cvv'];
+                for (let field of cardFields) {
+                    const element = document.getElementById(field);
+                    if (!element.value.trim()) {
+                        showNotification(`Please fill in ${element.labels[0].textContent}`);
+                        element.focus();
+                        return false;
+                    }
+                }
+                
+                // Basic card validation
+                if (!validateCardNumber(document.getElementById('cardNumber').value)) {
+                    showNotification('Please enter a valid card number');
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+
+        function validateCardNumber(cardNumber) {
+            const cleaned = cardNumber.replace(/\s/g, '');
+            return cleaned.length >= 13 && cleaned.length <= 19 && /^\d+$/.test(cleaned);
+        }
+
+        function processPayment(formData, paymentMethod, total, orderNumber) {
+            // Show loading state
+            const submitButton = document.querySelector('#checkoutForm button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Processing...';
+            submitButton.disabled = true;
+            
+            // Simulate payment processing delay
+            setTimeout(() => {
+                // Reset button
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                
+                // Clear cart
+                cart = [];
+                updateCartCount();
+                
+                // Show success modal
+                document.getElementById('orderNumber').textContent = orderNumber;
+                closeModal('checkoutModal');
+                openModal('successModal');
+                
+                // Reset form
+                document.getElementById('checkoutForm').reset();
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+                document.querySelector('.payment-method[data-method="card"]').classList.add('active');
+                document.getElementById('cardPaymentForm').style.display = 'block';
+                document.getElementById('eftPaymentForm').style.display = 'none';
+                document.getElementById('cashPaymentForm').style.display = 'none';
+                
+            }, 2000);
+        }
+
+        // Card number formatting
+        document.getElementById('cardNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+            e.target.value = formattedValue;
+        });
+
+        // Expiry date formatting
+        document.getElementById('expiryDate').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+
+        // CVV numeric only
+        document.getElementById('cvv').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+
+        // Notification system
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: rgba(59, 130, 246, 0.9);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                z-index: 9999;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                animation: slideIn 0.3s ease;
+            `;
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            filterProducts('all');
+        });
+    </script>
+</html>

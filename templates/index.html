@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo-text">
+            <div class="logo-main">
+                <span class="logo-din">DIN<span class="logo-tech">T</span></span><span class="logo-e">E</span><span class="logo-tech">CH</span>
+                <div class="logo-drops">
+                    <div class="drop"></div>
+                    <div class="drop"></div>
+                </div>
+            </div>
+            <div class="logo-tagline">DINATLHA <span class="logo-din">TECHNOLOGIES</span></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="target.html">Target Market</a>
+            <a href="contact.html">Contact</a>
+            <a href="shop.html">Shop</a>
+        </div>
+        <div class="mobile-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Welcome to DinTech</h1>
+            <p>Your trusted partner for ICT solutions, repairs, and security systems. Experience seamless technology operations with our innovative and reliable services.</p>
+            <div class="btn">
+                <button onclick="scrollToServices()">Explore Services</button>
+            </div>
+        </div>
+        <div class="home-logo">
+            <div class="logo">
+                <img src="Business Logo - Din-Tech (1).jpg" alt="DinTech Logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us content-section fade-in" id="about">
+        <h2>About <span class="logo-din">DIN<span class="logo-tech">T</span></span><span class="logo-e">E</span><span class="logo-tech">CH</span></h2>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="Robotic_Hand_Typing.png" alt="About DinTech">
+                <div class="about-info-overlay">
+                    <h3>Our Mission and Vision</h3>
+                    <p>To deliver professional ICT repair and CCTV installation services that empower clients to operate efficiently, securely, and with confidence.</p>
+                    <p>To be a leading ICT and security solutions provider in South Africa, recognized for excellence, reliability, and innovation.</p>
+                </div>
+            </div>
+            <div class="about-content">
+                <p>Dinatlha Technologies (DINTECH) is a dynamic ICT services company specializing in ICT repairs,
+                support, maintenance, and security systems installation solutions. We provide reliable, affordable, and
+                innovative technology support tailored to meet the needs of businesses, organizations, and individuals.
+                </p>
+                <p>Our mission is to ensure that clients experience seamless technology operations, maximum uptime, and
+                enhanced security through our ICT repair services and advanced surveillance systems. We pride ourselves
+                on being a customer-focused company, offering fast turnaround times, quality workmanship, and
+                professional support across all ICT and security-related services.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services content-section fade-in" id="services">
+        <h2>Our Services</h2>
+
+        <div class="service-card">
+            <h3 onclick="toggleService(this)">
+                ICT Repair & Maintenance 
+                <span class="expand-icon">▼</span>
+            </h3>
+            <div class="service-list">
+                <ul>
+                    <li style="--item-index: 1">Computer, laptop, tablet, mobile phone and printer repairs</li>
+                    <li style="--item-index: 2">Hardware and software troubleshooting</li>
+                    <li style="--item-index: 3">Virus removal & data recovery</li>
+                    <li style="--item-index: 4">Networking (LAN, WAN, Wi-Fi setup & support)</li>
+                    <li style="--item-index: 5">Preventive maintenance and ICT support</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <h3 onclick="toggleService(this)">
+                CCTV Installation & Security Solutions 
+                <span class="expand-icon">▼</span>
+            </h3>
+            <div class="service-list">
+                <ul>
+                    <li style="--item-index: 1">Supply and installation of CCTV systems (analog & IP cameras)</li>
+                    <li style="--item-index: 2">NVR/DVR setup and configuration</li>
+                    <li style="--item-index: 3">Remote monitoring solutions (mobile & desktop)</li>
+                    <li style="--item-index: 4">CCTV maintenance & upgrades</li>
+                    <li style="--item-index: 5">Access control & alarm integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="target-market-section">
+        <div class="targetmarket">
+            <h2>Target Market</h2>
+            <p>Our target market is a diverse range of businesses and organizations, including:</p>
+            <ul class="target-list">
+                <li>
+                    <i class="fas fa-briefcase"></i>
+                    <span>Small to medium-sized enterprises (SMEs)</span>
+                </li>
+                <li>
+                    <i class="fas fa-building"></i>
+                    <span>Corporate businesses</span>
+                </li>
+                <li>
+                    <i class="fas fa-school"></i>
+                    <span>Schools & Educational Institutions</span>
+                </li>
+                <li>
+                    <i class="fas fa-landmark"></i>
+                    <span>Government departments</span>
+                </li>
+                <li>
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Retailers and Shopping Centres</span>
+                </li>
+                <li>
+                    <i class="fas fa-home"></i>
+                    <span>Residential homes and estates</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="Business Logo - Din-Tech (1).jpg" alt="logo">
+            </div>
+            <p class="footer-tagline">Professional ICT & Security Solutions</p>
+            </div>
+
+            <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="target.html">Target Market</a>
+            <a href="contact.html">Contact</a>
+            <a href="shop.html">Shop</a>
+            </div>
+
+            <div class="footer-contact">
+            <p> <a href="mailto:info@dintech.co.za"><i class="fas fa-envelope"></i></a></p>
+            <p> <a href="tel:+27123456789"><i class="fas fa-phone"></i></a></p>
+            </div>
+
+            <div class="footer-social">
+                  <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Dinatlha Technologies. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('active');
+    }
+
+    function toggleService(header) {
+        const card = header.parentElement;
+        card.classList.toggle("expanded");
+    }
+
+    function scrollToServices() {
+        document.querySelector('.services').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    function handleScrollAnimation() {
+        const elements = document.querySelectorAll('.fade-in');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    function handleNavigation() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.background = 'rgba(255, 255, 255, 0.15)';
+            nav.style.backdropFilter = 'blur(30px)';
+            nav.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.2)';
+        } else {
+            nav.style.background = 'rgba(255, 255, 255, 0.1)';
+            nav.style.backdropFilter = 'blur(25px)';
+            nav.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+        handleNavigation();
+    });
+
+    window.addEventListener('load', handleScrollAnimation);
+
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    </script>
+
+</body>
+</html>
