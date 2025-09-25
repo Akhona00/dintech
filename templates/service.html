@@ -308,6 +308,7 @@
 
         function closeServiceInfo() {
             document.getElementById('serviceInfo').classList.remove('active');
+            document.querySelector('.close-info').addEventListener('click', closeServiceInfo);
         }
 
         // Close service info when clicking outside

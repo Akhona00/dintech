@@ -361,6 +361,7 @@ nav a:hover {
             cursor: pointer;
             color: #999;
             transition: color 0.3s ease;
+            z-index: 1001; /* Ensures it's always clickable */
         }
 
         .close-info:hover {
@@ -382,7 +383,8 @@ nav a:hover {
             transition: 0.3s;
         }
 
-        @media (max-width: 900px) {
+
+    @media (max-width: 900px) {
     nav {
         position: relative;
         padding: 1rem 0.7rem;
@@ -516,10 +518,15 @@ nav a:hover {
                 height: auto;
                 max-height: 80vh;
                 overflow-y: auto;
+                left: auto;
             }
 
             .service-info.active {
-                right: auto;
+                right: 20px;
+            }
+
+            .close-info {
+                z-index: 1001;
             }
 
             .service-tooltip {
