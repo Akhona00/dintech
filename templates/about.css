@@ -15,6 +15,26 @@ body {
     overflow-x: hidden;
 }
 
+.about-black-overlay {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.65); /* Adjust opacity as needed */
+    z-index: 1;
+    pointer-events: none;
+}
+
+body > nav,
+body > .particle,
+body > .container,
+body > .site-footer {
+    position: relative;
+    z-index: 2;
+}
+
 nav {
     position: fixed;
     top: 0;
