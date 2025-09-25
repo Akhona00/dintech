@@ -354,7 +354,7 @@ nav a:hover {
 
 /* Decorative elements */
 .mission::after {
-    content: '🎯';
+    content: '';
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
@@ -364,7 +364,7 @@ nav a:hover {
 }
 
 .vision::after {
-    content: '🚀';
+    content: '';
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
